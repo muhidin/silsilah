@@ -45,6 +45,7 @@ $ggcccTotal = 0;
                                             @foreach($ggc->childs as $ggcc)
                                             <div class="entry {{ $ggccCount == 1 ? 'sole' : '' }}">
                                                 <span class="label">{{ link_to_route('users.tree', $ggcc->name, [$ggcc->id], $ggcc->yod?['style' => 'color: #999;', 'title' => $ggcc->name.' ('.$ggcc->gender.')'] : ['title' => $ggcc->name.' ('.$ggcc->gender.')']) }}</span>
+<<<<<<< HEAD
 
                                                 @if ($ggcccCount = $ggcc->childs->count())
                                                 <?php $ggcccTotal += $ggcccCount ?>
@@ -58,6 +59,8 @@ $ggcccTotal = 0;
                                                 @endif
         
 
+=======
+>>>>>>> 9d62873 (upgrade ke Laravel 10)
                                             </div>
                                             @endforeach
                                         </div>

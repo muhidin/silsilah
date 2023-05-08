@@ -103,6 +103,7 @@ $ggcccTotal = 0;
 <div class="container">
 <hr>
 <div class="row">
+<<<<<<< HEAD
     <style>
         table, tr, td {
             border: 1px solid black;
@@ -133,6 +134,9 @@ $ggcccTotal = 0;
     </table>
 
     {{-- <div class="col-md-1">&nbsp;</div>
+=======
+    <div class="col-md-1">&nbsp;</div>
+>>>>>>> 9d62873 (upgrade ke Laravel 10)
     @if ($childsTotal)
     <div class="col-md-1 text-right">{{ trans('app.child_count') }}</div>
     <div class="col-md-1 text-left"><strong style="font-size:30px">{{ $childsTotal }}</strong></div>
@@ -157,7 +161,11 @@ $ggcccTotal = 0;
     <div class="col-md-1 text-right">Jumlah Udhek-udhek</div>
     <div class="col-md-1 text-left"><strong style="font-size:30px">{{ $ggcccTotal }}</strong></div>
     @endif
+<<<<<<< HEAD
     <div class="col-md-1">&nbsp;</div> --}}
+=======
+    <div class="col-md-1">&nbsp;</div>
+>>>>>>> 9d62873 (upgrade ke Laravel 10)
 </div>
 </div>
 <hr>
@@ -166,5 +174,9 @@ Info Istilah Silsilah ada di <a href="https://id.wikipedia.org/wiki/Anak_cucu" t
 @endsection
 
 @section ('ext_css')
+<<<<<<< HEAD
 <link rel="stylesheet" href="{{ asset('css/treephoto.css') }}">
+=======
+<link rel="stylesheet" href="{{ asset('css/tree.css') }}">
+>>>>>>> 9d62873 (upgrade ke Laravel 10)
 @endsection
