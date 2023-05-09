@@ -30,6 +30,7 @@ return [
     'show_profile'      => 'Show Profile',
     'show_family_chart' => 'Show Family Chart',
     'show_family_tree'  => 'Show Family Tree',
+    'show_family_tree_photo'  => 'Show Family Tree (Photo)',
     'show_marriages'    => 'Show Marriages',
     'enter_new_name'    => 'Enter new Name...',
     'select_from_existing_males'   => 'Select from Existing Males',

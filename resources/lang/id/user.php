@@ -40,6 +40,7 @@ return [
     'father'   => 'Ayah',
     'mother'   => 'Ibu',
     'parent'   => 'Orang Tua',
+    'pob'      => 'Tempat Lahir',
     'dob'      => 'Tanggal Lahir',
     'yob'      => 'Tahun Lahir',
     'dod'      => 'Tanggal Meninggal',

@@ -52,11 +52,12 @@ function userPhoto(User $user, $attributes = [])
  */
 function userPhotoPath($photoPath, $genderId)
 {
-    if (is_file(public_path('storage/'.$photoPath))) {
-        return asset('storage/'.$photoPath);
+    // if (is_file(public_path('storage/'.$photoPath))) {
+    if (is_null($photoPath)) {
+        return asset('images/icon_user_'.$genderId.'.jpg');
     }
+    return asset('storage/'.$photoPath);
 
-    return asset('images/icon_user_'.$genderId.'.png');
 }
 
 function is_system_admin(User $user)

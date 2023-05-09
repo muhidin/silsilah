@@ -29,6 +29,7 @@ class UpdateRequest extends FormRequest
             'nickname'    => 'sometimes|required|string|max:255',
             'name'        => 'sometimes|required|string|max:255',
             'gender_id'   => 'sometimes|required|numeric',
+            'pob'         => 'nullable|string|max:255',
             'dob'         => 'nullable|date|date_format:Y-m-d',
             'yob'         => 'nullable|date_format:Y',
             'dod'         => 'nullable|date|date_format:Y-m-d',
@@ -55,40 +56,45 @@ class UpdateRequest extends FormRequest
         ];
     }
 
-    public function validated()
+    public function validated($key = null, $default = null)
     {
         $formData = parent::validated();
 
-        $formData['yod'] = $this->getYod($formData);
-        $formData['yob'] = $this->getYob($formData);
+        // $formData['yod'] = $this->getYod($formData);
+        // $formData['yob'] = $this->getYob($formData);
 
         if (isset($formData['password']) && $formData['password']) {
             $formData['password'] = bcrypt($formData['password']);
         } else {
             unset($formData['password']);
         }
-
         return $formData;
     }
-
+    
     private function getYob($formData)
     {
         if (isset($formData['yob'])) {
-            return $formData['yob'];
+            $formData['yob'];
+        } else {
+            unset($formData['yob']);
         }
-
+        return $formData;
+        
         if (isset($formData['dob']) && $formData['dob']) {
             return substr($formData['dob'], 0, 4);
         }
-
+        
         return;
     }
-
+    
     private function getYod($formData)
     {
         if (isset($formData['yod'])) {
-            return $formData['yod'];
+            $formData['yod'];
+        } else {
+            unset($formData['yod']);
         }
+        return $formData;
 
         if (isset($formData['dod']) && $formData['dod']) {
             return substr($formData['dod'], 0, 4);

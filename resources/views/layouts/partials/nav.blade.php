@@ -18,10 +18,12 @@
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <!-- Left Side Of Navbar -->
+            @if (auth()->check())
             <ul class="nav navbar-nav">
                 <li><a href="{{ route('users.search') }}">{{ __('app.search_your_family') }}</a></li>
                 <li><a href="{{ route('birthdays.index') }}">{{ __('birthday.birthday') }}</a></li>
             </ul>
+            @endif
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">

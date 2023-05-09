@@ -40,6 +40,7 @@ return [
     'father'   => 'Father',
     'mother'   => 'Mother',
     'parent'   => 'Parent',
+    'pob'      => 'Place of Birth',
     'dob'      => 'Date of Birth',
     'yob'      => 'Year of Birth',
     'dod'      => 'Date of Death',

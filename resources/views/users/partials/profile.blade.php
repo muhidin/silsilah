@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-heading"><h3 class="panel-title">{{ trans('user.profile') }}</h3></div>
     <div class="panel-body text-center">
-        {{ userPhoto($user, ['style' => 'width:100%;max-width:300px']) }}
+        {{ userPhoto($user, $user->yod ? ['style' => 'width:100%;max-width:300px;-webkit-filter: grayscale(100%);filter: grayscale(100%);'] : ['style' => 'width:100%;max-width:300px;'] ) }}
     </div>
     <table class="table">
         <tbody>
@@ -18,25 +18,41 @@
                 <td>{{ $user->gender }}</td>
             </tr>
             <tr>
-                <th>{{ trans('user.dob') }}</th>
-                <td>{{ $user->dob }}</td>
-            </tr>
-            <tr>
                 <th>{{ trans('user.birth_order') }}</th>
                 <td>{{ $user->birth_order }}</td>
             </tr>
-            @if ($user->dod)
             <tr>
-                <th>{{ trans('user.dod') }}</th>
-                <td>{{ $user->dod }}</td>
+                <th>{{ trans('user.pob') }}</th>
+                <td>{{ $user->pob }}</td>
             </tr>
-            @endif
+            
+            <tr>
+                @if ($user->dob)
+                    <th>{{ trans('user.dob') }}</th>
+                    <td>{{ \Carbon\Carbon::parse($user->dob)->format('d-m-Y')}}</td>
+                @elseif ($user->yob)
+                    <th>{{ trans('user.yob') }}</th>
+                    <td>{{ $user->yob }}</td>
+                @else
+                    <th>{{ trans('user.yob') }}</th>
+                    <td>No data</td>
+                @endif
+            </tr>
+            <tr>
+                @if ($user->dod)
+                    <th>{{ trans('user.dod') }}</th>
+                    <td>{{ \Carbon\Carbon::parse($user->dob)->format('d-m-Y')}}</td>
+                @elseif ($user->yod)
+                    <th>{{ trans('user.yod') }}</th>
+                    <td>{{ $user->yod }}</td>
+                @endif
+            </tr>
             <tr>
                 <th>{{ trans('user.age') }}</th>
                 <td>
-                    @if ($user->age)
+                    {{-- @if ($user->age) --}}
                         {!! $user->age_string !!}
-                    @endif
+                    {{-- @endif --}}
                 </td>
             </tr>
             @if ($user->email)
@@ -45,14 +61,18 @@
                 <td>{{ $user->email }}</td>
             </tr>
             @endif
+            @if ($user->phone)
             <tr>
                 <th>{{ trans('user.phone') }}</th>
                 <td>{{ $user->phone }}</td>
             </tr>
+            @endif
+            @if ($user->address)
             <tr>
                 <th>{{ trans('user.address') }}</th>
                 <td>{!! nl2br($user->address) !!}</td>
             </tr>
+            @endif
         </tbody>
     </table>
 </div>

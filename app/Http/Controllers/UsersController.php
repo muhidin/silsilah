@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Couple;
-use App\Http\Requests\Users\UpdateRequest;
-use App\Jobs\Users\DeleteAndReplaceUser;
 use App\User;
+use App\Couple;
 use App\UserMetadata;
+use Ramsey\Uuid\Uuid;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use Ramsey\Uuid\Uuid;
-use Storage;
+use App\Jobs\Users\DeleteAndReplaceUser;
+use App\Http\Requests\Users\UpdateRequest;
+// use Storage;
+use Illuminate\Support\Facades\Storage;
+// use Illuminate\Filesystem\FilesystemManager as Storage;
 
 class UsersController extends Controller
 {
@@ -97,6 +99,12 @@ class UsersController extends Controller
     public function tree(User $user)
     {
         return view('users.tree', compact('user'));
+    }
+
+    // tambahan untuk foto
+    public function tree_photo(User $user)
+    {
+        return view('users.tree_photo', compact('user'));
     }
 
     /**
@@ -210,9 +218,10 @@ class UsersController extends Controller
             'photo' => 'required|image|max:200',
         ]);
 
-        if (Storage::exists($user->photo_path)) {
-            Storage::delete($user->photo_path);
-        }
+        !is_null($user->photo_path) && Storage::delete($user->photo_path);
+        // if (Storage::exists($user->photo_path)) {
+        //     Storage::delete($user->photo_path);
+        // }
 
         $user->photo_path = $request->photo->store('images');
         $user->save();
