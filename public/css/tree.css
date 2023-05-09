@@ -1,3 +1,10 @@
+/*!
+ * Credit
+ * Project URL: https://codepen.io/P233/pen/Kzbsi;
+ * Project title: CSS Horizontal Family Tree
+ * Project Author: Peiwen Lu (https://codepen.io/P233);
+ */
+
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -16,7 +23,15 @@ body {
     position: relative;
     margin-left: 230px;
 }
-
+/*.branch .lv3 {
+    margin-left: 150px;
+}
+.branch .lv4 {
+    margin-left: 150px;
+}
+#wrapper .branch .lv2 span.label {
+    width: 30px;
+}*/
 .branch:before {
     content: "";
     width: 30px;
@@ -24,61 +39,7 @@ body {
     position: absolute;
     left: -60px;
     top: 50%;
-    margin-top: 0px;
-}
-.lv2:before {
-    content: "";
-    width: 30px;
-    border-top: 2px solid #ccc;
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    margin-top: -66px;
-}
-.lv3:before {
-    content: "";
-    width: 30px;
-    border-top: 2px solid #ccc;
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    margin-top: -66px;
-}
-.lv4:before {
-    content: "";
-    width: 30px;
-    border-top: 2px solid #ccc;
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    margin-top: -66px;
-}
-.lv5:before {
-    content: "";
-    width: 30px;
-    border-top: 2px solid #ccc;
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    margin-top: -66px;
-}
-.lv41:before {
-    content: "";
-    width: 30px;
-    border-top: 2px solid #ccc;
-    position: absolute;
-    left: -60px;
-    top: -50%;
     margin-top: 1px;
-}
-.lv41a:before {
-    content: "";
-    width: 30px;
-    border-top: 2px solid #ccc;
-    position: absolute;
-    left: -60px;
-    top: 50%;
-    margin-top: -60px;
 }
 
 .entry {
@@ -129,164 +90,25 @@ body {
 }
 .entry.sole:after {
     width: 30px;
-    height: 0px;
+    height: 0;
     margin-top: 1px;
-    border-radius: 0;
-}
-.entry.sole1:before {
-    display: none;
-}
-.entry.sole1:after {
-    width: 30px;
-    height: 0px;
-    margin-top: -66px;
-    border-radius: 0;
-}
-.entry.sole3:before {
-    display: none;
-}
-.entry.sole3:after {
-    width: 30px;
-    height: 0px;
-    margin-top: -60px;
-    top: 50%;
-    border-radius: 0;
-}
-.entry.sole3a:before {
-    display: none;
-}
-.entry.sole3a:after {
-    width: 30px;
-    height: 0px;
-    margin-top: 0px;
-    top: 50%;
     border-radius: 0;
 }
 
 #wrapper span.label {
     display: block;
     font-size: 12px;
+    /*min-width: 150px;*/
     width: 170px;
     overflow-x: hidden;
     padding: 4px 8px;
     line-height: 14px;
     text-align: center;
     border: 2px solid #ccc;
+    /*border: 1px solid #2e6ba7;*/
     border-radius: 6px;
     position: absolute;
     left: 0;
     top: 50%;
     margin-top: -10px;
-}
-
-#wrapper span.labelfoto1 {
-    display: block;
-    font-size: 12px;
-    width: 170px;
-    overflow-x: hidden;
-    padding: 2px 4px;
-    line-height: 14px;
-    text-align: center;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    left: 0;
-    top: 50%;
-    margin-top: -60px;
-    position: absolute;
-}
-
-.ikat1 {
-    position:relative;
-    height: 130px;
-}
-.labelfoto2 {
-    display: block;
-    font-size: 12px;
-    width: 170px;
-    overflow-x: hidden;
-    padding: 2px 4px;
-    line-height: 14px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    left: 0;
-    top: 50%;
-    margin-top: -60px;
-    position: absolute;
-}
-
-.ikat2 {
-    position:relative;
-    height: 130px;
-  
-}
-.labelfoto3 {
-    display: block;
-    font-size: 12px;
-    width: 170px;
-    overflow-x: hidden;
-    padding: 2px 4px;
-    line-height: 14px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    left: 0;
-    top: 50%;
-    margin-top: -60px;
-    position: absolute;
-}
-.labelfoto4 {
-    display: block;
-    font-size: 12px;
-    width: 170px;
-    overflow-x: hidden;
-    padding: 2px 4px;
-    line-height: 14px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    left: 0;
-    top: 50%;
-    margin-top: -60px;
-    position: absolute;
-}
-.labelfoto5 {
-    display: block;
-    font-size: 12px;
-    width: 170px;
-    overflow-x: hidden;
-    padding: 2px 4px;
-    line-height: 14px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    left: 0;
-    top: 50%;
-    margin-top: -60px;
-    position: absolute;
-}
-.labelfoto6 {
-    display: block;
-    font-size: 12px;
-    width: 170px;
-    overflow-x: hidden;
-    padding: 2px 4px;
-    line-height: 14px;
-    text-align: center;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    left: 0;
-    top: 50%;
-    margin-top: -60px;
-    position: absolute;
-}
-.foto {
-    top: 25%;
-}
-.foto5 {
-    top: 50%;
-    margin-top: -60px;
-}
-.foto5a {
-    top: 50%;
 }

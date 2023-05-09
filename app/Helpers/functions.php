@@ -52,12 +52,18 @@ function userPhoto(User $user, $attributes = [])
  */
 function userPhotoPath($photoPath, $genderId)
 {
+<<<<<<< HEAD
     // if (is_file(public_path('storage/'.$photoPath))) {
+=======
+>>>>>>> e6eeb80 (Upgrade ke Laravel 10 dan perbaikan)
     if (is_null($photoPath)) {
         return asset('images/icon_user_'.$genderId.'.jpg');
     }
     return asset('storage/'.$photoPath);
+<<<<<<< HEAD
 
+=======
+>>>>>>> e6eeb80 (Upgrade ke Laravel 10 dan perbaikan)
 }
 
 function is_system_admin(User $user)

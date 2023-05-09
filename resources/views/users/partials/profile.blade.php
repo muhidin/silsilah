@@ -18,10 +18,22 @@
                 <td>{{ $user->gender }}</td>
             </tr>
             <tr>
+<<<<<<< HEAD
+=======
+                <th>{{ trans('user.pob') }}</th>
+                <td>{{ $user->pob }}</td>
+            </tr>
+            <tr>
+                <th>{{ trans('user.dob') }}</th>
+                <td>{{ \Carbon\Carbon::parse($user->dob)->format('d-m-Y')}}</td>
+            </tr>
+            <tr>
+>>>>>>> e6eeb80 (Upgrade ke Laravel 10 dan perbaikan)
                 <th>{{ trans('user.birth_order') }}</th>
                 <td>{{ $user->birth_order }}</td>
             </tr>
             <tr>
+<<<<<<< HEAD
                 <th>{{ trans('user.pob') }}</th>
                 <td>{{ $user->pob }}</td>
             </tr>
@@ -46,6 +58,10 @@
                     <th>{{ trans('user.yod') }}</th>
                     <td>{{ $user->yod }}</td>
                 @endif
+=======
+                <th>{{ trans('user.dod') }}</th>
+                <td>{{ \Carbon\Carbon::parse($user->dod)->format('d-m-Y')}}</td>
+>>>>>>> e6eeb80 (Upgrade ke Laravel 10 dan perbaikan)
             </tr>
             <tr>
                 <th>{{ trans('user.age') }}</th>

@@ -104,6 +104,9 @@ $ggcccTotal = 0;
 <hr>
 <div class="row">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e6eeb80 (Upgrade ke Laravel 10 dan perbaikan)
     <style>
         table, tr, td {
             border: 1px solid black;
@@ -134,9 +137,12 @@ $ggcccTotal = 0;
     </table>
 
     {{-- <div class="col-md-1">&nbsp;</div>
+<<<<<<< HEAD
 =======
     <div class="col-md-1">&nbsp;</div>
 >>>>>>> 9d62873 (upgrade ke Laravel 10)
+=======
+>>>>>>> e6eeb80 (Upgrade ke Laravel 10 dan perbaikan)
     @if ($childsTotal)
     <div class="col-md-1 text-right">{{ trans('app.child_count') }}</div>
     <div class="col-md-1 text-left"><strong style="font-size:30px">{{ $childsTotal }}</strong></div>
@@ -162,10 +168,14 @@ $ggcccTotal = 0;
     <div class="col-md-1 text-left"><strong style="font-size:30px">{{ $ggcccTotal }}</strong></div>
     @endif
 <<<<<<< HEAD
+<<<<<<< HEAD
     <div class="col-md-1">&nbsp;</div> --}}
 =======
     <div class="col-md-1">&nbsp;</div>
 >>>>>>> 9d62873 (upgrade ke Laravel 10)
+=======
+    <div class="col-md-1">&nbsp;</div> --}}
+>>>>>>> e6eeb80 (Upgrade ke Laravel 10 dan perbaikan)
 </div>
 </div>
 <hr>
@@ -175,8 +185,12 @@ Info Istilah Silsilah ada di <a href="https://id.wikipedia.org/wiki/Anak_cucu" t
 
 @section ('ext_css')
 <<<<<<< HEAD
+<<<<<<< HEAD
 <link rel="stylesheet" href="{{ asset('css/treephoto.css') }}">
 =======
 <link rel="stylesheet" href="{{ asset('css/tree.css') }}">
 >>>>>>> 9d62873 (upgrade ke Laravel 10)
+=======
+<link rel="stylesheet" href="{{ asset('css/treephoto.css') }}">
+>>>>>>> e6eeb80 (Upgrade ke Laravel 10 dan perbaikan)
 @endsection
