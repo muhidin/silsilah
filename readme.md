@@ -1,115 +1,119 @@
 ![Laravel](https://laravel.com/assets/img/components/logo-laravel.svg)
 
-<h1 align="center">Genealogy Application</h1>
+<h1 align="center">Aplikasi Silsilah Keluarga</h1>
+
+Fork Github mas Nafies Luthfi
 
 [![Build Status](https://travis-ci.org/nafiesl/silsilah.svg?branch=master)](https://travis-ci.org/nafiesl/silsilah)
 [![Coverage Status](https://coveralls.io/repos/github/nafiesl/silsilah/badge.svg?branch=master)](https://coveralls.io/github/nafiesl/silsilah?branch=master)
 
 > **Development in progress**  
-> In development progress, any changes of table structure **will be updated** directly to corresponding **migration file**.
->
-> [Baca README Bahasa Indonesia](readme.id.md)
+> Dalam proses development, perubahan struktur tabel akan **diubah langsung pada file migration** yang sesuai.
 
-## About
-Genealogy (Silsilah) application to record our family members.
+## Tentang
+Aplikasi silsilah keluarga untuk mempermudah pendataan keluarga kita.
 
-## Features
-This application uses Bahasa Indonesia and English based on `config.locale`.
+## Pemanfaatan
+1. Melihat Silsilah keluarga
+2. Melihat data ahli waris
 
-### Logic Concept
-1. A person can have one father
-2. A person can have one mother
-3. A person can have one parent (couple of mother and father)
-4. A person can have 0 to many children
-5. A person can have 0 to many spouses (husbands or wife)
-6. A couple can have 0 to many children (based on parent_id)
+## Fitur
+Aplikasi ini menggunakan Bahasa Indonesia dan Bahasa Inggris, diatur pada `config.locale`.
 
-### Family Member Entry
-1. Enter Name and Gender
-2. Set Father
-3. Set Mother
-4. Add Spouse
-5. Add Child
+### Konsep
+1. Satu orang memiliki satu ayah (belum sebagai tentu orang tua)
+2. Satu orang memiliki satu ibu (belum sebagai tentu orang tua)
+3. satu orang memiliki satu orang tua
+4. Satu orang memiliki 0 s/d beberapa anak
+5. Satu orang bisa memiliki pasangan (Istri/Suami)
+6. Satu pasangan bisa memiliki 0 s/d beberapa anak
+7. Satu orang laki-laki bisa memiliki maksimal 4 pasangan yang tidak cerai (TODO)
+8. Satu orang perempuan bisa memiliki maksimal 1 pasangan yang tidak cerai (TODO)
+9. Satu orang perempuan yang suaminya meninggal otomatis set tanggal cerai (pada data pasangan) (TODO)
 
-### Person Attribute
-1. Nickname
-2. Gender
-3. Fullname
-4. Date of birth
-5. Date of death (or at least year of death)
-6. Address
-7. Phone Number
+### Input ke sistem
+1. Input Nama dan Jenis Kelamin
+2. Tambah Ayah
+3. Tambah Ibu
+4. Tambah Pasangan
+5. Tambah Anak
+
+### Data Orang
+1. Nama Panggilan
+2. Jenis Kelamin
+3. Nama Lengkap
+4. Tanggal Lahir
+5. Tanggal Meninggal (atau cukup tahun)
+6. Alamat
+7. Telp
 8. Email
 
-### Couple Attribute (TODO)
-1. Husband
-2. Wife
-3. Marriage Date
-4. Divorce Date
-5. Address
+### Data Pasangan (TODO)
+1. Suami
+2. Istri
+3. Tanggal menikah
+4. Tanggal Cerai
+5. Alamat
 
-## How to Install
+## Cara Install
 
-### Server Requirements
+### Kebutuhan Server
 
-This application can be installed on local server and online server with these specifications :
+Aplikasi ini dapat dipasang pada server lokal dan onlne dengan spesifikasi berikut:
 
-1. PHP 7.3 (and meet other [Laravel 8.x server requirements](https://laravel.com/docs/8.x/deployment#server-requirements)),
-2. MySQL or MariaDB database,
-3. SQlite (for automated testing).
+1. PHP 8.1 (dan mengikuti [server requirements Laravel 10.x](https://laravel.com/docs/10.x/deployment#server-requirements) lainnya),
+2. Database MySQL atau MariaDB,
+3. SQlite (untuk automated testing).
 
-### Installation Steps
+### Langkah Instalasi
 
-1. Clone the repo : `git clone https://github.com/nafiesl/silsilah.git`
+1. Clone Repo, pada terminal : `git clone https://github.com/muhidin/silsilah.git`
 2. `cd silsilah`
 3. `composer install`
 4. `cp .env.example .env`
 5. `php artisan key:generate`
-6. Create **database on MySQL**
-7. **Set database credentials** on `.env` file
+6. Buat **database pada mysql** untuk aplikasi ini
+7. **Setting database** pada file `.env`
 8. `php artisan migrate`
 9. `php artisan storage:link`
 10. `php artisan serve`
-11. Register as new user to start using the application.
-12. Add the registered email address to the `.env` file:
+11. Register user baru untuk mulai mengisi silsilah.
+12. Tambahkan alamat email yang digunakan mendaftar pada file `.env`:
     ```
     SYSTEM_ADMIN_EMAILS=admin@email.com;other_admin@email.com
     ```
 
 ## Testing
-This application built with testing (TDD) using in-memory sqlite database.
-```bash
-$ vendor/bin/phpunit
-```
-
-## Contributing
-Feel free to submit Issue for bugs or sugestions and Pull Request.
+Ingin mencoba automated testingnya? Silakan ketik perintah pada terminal: `vendor/bin/phpunit`
 
 ## Screenshots
 
-#### Family Tree
-![Family Tree](public/images/02-pohon-keluarga.jpg "Family Tree")
+#### Pohon Keluarga
+![Pohon Keluarga](public/images/02-pohon-keluarga.jpg "Pohon Keluarga")
 
-This family tree view is using the [Horizontal Family Tree CSS](https://codepen.io/P233/pen/Kzbsi), thanks to [Peiwen Lu](https://codepen.io/P233/pen/Kzbsi).
+Tampilan pohon keluarga ini menggunakan [Horizontal Family Tree CSS](https://codepen.io/P233/pen/Kzbsi), terima kasih kepada [Peiwen Lu](https://codepen.io/P233/pen/Kzbsi).
 
-#### Family Chart
-![Family Chart](public/images/03-bagan-keluarga.jpg "Family Chart")
+#### Bagan Keluarga
+![Bagan Keluarga](public/images/03-bagan-keluarga.jpg "Bagan Keluarga")
 
-#### Search Family Member
-![Search Family Member](public/images/01-cari-keluarga.jpg "Search Family Member")
+#### Cari Keluarga
+![Cari Keluarga](public/images/01-cari-keluarga.jpg "Cari Keluarga")
 
-#### User Profile
-![User Profile](public/images/04-profil.jpg "User Profile")
+#### Profil
+![Profil](public/images/04-profil.jpg "Profil")
 
-#### Profile Form
-![Profile Form](public/images/05-form-profil.jpg "Profile Form")
+#### Form Profil
+![Form Profil](public/images/05-form-profil.jpg "Form Profil")
 
-#### Profil Edit Form
-![Profil Edit Form](public/images/06-edit-profil.jpg "Profil Edit Form")
+#### Edit Profil
+![Edit Profil](public/images/06-edit-profil.jpg "Edit Profil")
 
 #### Automated Testing
+```bash
+$ vendor/bin/phpunit
+```
 ![Automated Testing](public/images/07-automated-testing.jpg "Automated Testing")
 
 ## License
 
-Silsilah project is open-sourced software licensed under the [MIT license](LICENSE).
+Project Silsilah merupakan software open-source di bawah lisensi [Lisensi MIT](LICENSE).
