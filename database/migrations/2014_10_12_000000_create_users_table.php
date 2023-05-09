@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->uuid('father_id')->nullable();
             $table->uuid('mother_id')->nullable();
             $table->uuid('parent_id')->nullable();
+            $table->date('pob')->nullable();
             $table->date('dob')->nullable();
             $table->year('yob')->nullable();
             $table->unsignedTinyInteger('birth_order')->nullable();
